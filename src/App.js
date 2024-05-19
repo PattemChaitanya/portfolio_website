@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import HeroSection from "./components/HeroSection";
+import Navbar from "./components/Navbar";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Contact from "./components/Contact";
+import { Box } from "@mui/material";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Box
+        component={"main"}
+        sx={{
+          color: "white",
+          px: { xs: "1rem", md: "2rem", lg: "4rem", xl: "6rem" },
+        }}
+      >
+        <HeroSection />
+        <About />
+        <Projects />
+        <Contact />
+      </Box>
+    </>
   );
 }
-
-export default App;
